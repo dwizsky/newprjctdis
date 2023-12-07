@@ -27,7 +27,7 @@ Route::get('/', function () {
     return view('dashboard',[
         "title"=>"Dashboard"
     ]);
-});
+})->middleware('auth');
 
 Route::resource('tambahinstansi',TambahinstansiController::class)->except('show','destroy','create')->middleware('auth');
 Route::resource('jenishukuman',JenishukumanController::class)->except('show','destroy','create')->middleware('auth');
